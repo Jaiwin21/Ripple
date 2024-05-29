@@ -12,11 +12,11 @@ const HomePage = () => {
           <Navigation/>
         </Grid>
 
-        <Grid item xs={12} lg={7} xl={8}className='w-full relative'>
+        <Grid item xs={12} lg={4} xl={5}className='w-full relative'>
           <HomeSection/>
         </Grid>
 
-        <Grid item xs={0} lg={3} className='hidden lg:block w-full relative'>
+        <Grid item xs={0} lg={3} xl={2} className='hidden lg:block w-full relative'>
         <p className='text-center'> right part</p>
         </Grid>
 
