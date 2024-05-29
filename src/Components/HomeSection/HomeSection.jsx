@@ -5,6 +5,8 @@ import * as Yup from 'yup'
 import ImageIcon from '@mui/icons-material/Image';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
+import PostCard from './PostCard';
+
 
 const validationSchema=Yup.object().shape({
     content:Yup.string().required("Post text is required")
@@ -45,7 +47,7 @@ const HomeSection = () => {
             <div className='flex space-x-5'>
                 <Avatar alt="username" src='https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png'/>
                 <div className='w-full'>
-                    <form>
+                    <form onSubmit={formik.handleSubmit}>
                         <div>
                             <input type="text" name="content" placeholder="Make a ripple?" className={`border-none outline-none text-al bg-transparent`}
                             {...formik.getFieldProps("content")} />
@@ -68,7 +70,7 @@ const HomeSection = () => {
                             </div>
                             <div>
                                 <Button sx={{ width: "100%", borderRadius: "20px", paddingY: "8px", paddingX: "20px", bgColor: "#1e88e5" }}
-                        variant='contained'>
+                        variant='contained' type='submit'>
                                     Post
                                 </Button>
                             </div>
@@ -79,6 +81,9 @@ const HomeSection = () => {
                 </div>
             </div>
 
+        </section>
+        <section>
+            <PostCard/>
         </section>
 
     </div>
