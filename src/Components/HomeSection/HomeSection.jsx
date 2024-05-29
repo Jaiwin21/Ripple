@@ -1,7 +1,26 @@
 import { Avatar } from '@mui/material'
+import { useFormik } from 'formik'
 import React from 'react'
+import * as Yup from 'yup' 
+
+const validationSchema=Yup.object().shape({
+    content:Yup.string().required("Post text is required")
+})
 
 const HomeSection = () => {
+    
+    const handleSubmit=(values)=>{
+        console.log("Values ",values)
+    }
+    
+    const formik=useFormik({
+        initialValues:{
+            content:"",
+            image:""
+        },
+        onSubmit:handleSubmit,
+        validationSchema
+    })
   return (
     <div className='space-y-5'>
         <section>
@@ -13,7 +32,8 @@ const HomeSection = () => {
                 <div className='w-full'>
                     <form>
                         <div>
-                            <input type="text" name="content" placeholder="Make a ripple?" className={`border-none outline-none text-al bg-transparent`} />
+                            <input type="text" name="content" placeholder="Make a ripple?" className={`border-none outline-none text-al bg-transparent`}
+                            {...formik.getFieldProps("content")} />
                         </div>
                     </form>
                 </div>
