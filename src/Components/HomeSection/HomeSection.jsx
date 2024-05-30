@@ -83,7 +83,7 @@ const HomeSection = () => {
 
         </section>
         <section>
-            <PostCard/>
+            {[1,1,1,1].map((item)=><PostCard/>)}
         </section>
 
     </div>
