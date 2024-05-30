@@ -3,6 +3,7 @@ import React from 'react'
 import Navigation from '../Navigation/Navigation'
 import HomeSection from '../HomeSection/HomeSection'
 import PostCard from '../HomeSection/PostCard'
+import RightPart from '../RightPart/RightPart'
 
 const HomePage = () => {
   return (
@@ -27,7 +28,7 @@ const HomePage = () => {
       {/* Right side component */}
       <Grid item xs={0} lg={3} className='hidden lg:block w-full relative'>
         <div className='sticky top-0'>
-          <p className='text-center'>right part</p>
+          <RightPart/> 
         </div>
       </Grid>
     </Grid>
