@@ -2,29 +2,36 @@ import { Grid } from '@mui/material'
 import React from 'react'
 import Navigation from '../Navigation/Navigation'
 import HomeSection from '../HomeSection/HomeSection'
+import PostCard from '../HomeSection/PostCard'
 
 const HomePage = () => {
   return (
-    
     <Grid container className='px-5 lg:px-36 justify-between'>
-
-        <Grid item xs={0} lg={2} xl={3}className='hidden lg:block lg:justify-center lg:items-center w-full relative'>
+      {/* Navigation bar on the left */}
+      <Grid item xs={0} lg={2} xl={3} className='hidden lg:flex lg:justify-center lg:items-start w-full relative'>
         <div className='sticky top-0 h-screen'>
           <Navigation />
         </div>
-        </Grid>
+      </Grid>
 
-        <Grid item xs={12} lg={4} xl={5}className='w-full relative'>
-          <HomeSection/>
-        </Grid>
+      {/* Main content in the center */}
+      <Grid item xs={12} lg={5} xl={4} className='w-full relative'>
+        <HomeSection />
+        <section>
+          {[1, 1, 1, 1].map((item, index) => (
+            <PostCard key={index} />
+          ))}
+        </section>
+      </Grid>
 
-        <Grid item xs={0} lg={3} xl={2} className='hidden lg:block w-full relative'>
-        <p className='text-center'> right part</p>
-        </Grid>
-
+      {/* Right side component */}
+      <Grid item xs={0} lg={3} className='hidden lg:block w-full relative'>
+        <div className='sticky top-0'>
+          <p className='text-center'>right part</p>
+        </div>
+      </Grid>
     </Grid>
-
-  )
+  );
 }
 
 export default HomePage
