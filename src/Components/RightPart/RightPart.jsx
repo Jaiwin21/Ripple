@@ -2,6 +2,7 @@ import React from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Button from '@mui/material/Button';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const RightPart = () => {
   const handleChangeTheme=()=>{
@@ -22,6 +23,25 @@ const RightPart = () => {
             <Button variant='contained' sx={{padding:"10px", paddingX:"20px", borderRadius:"25px"}}>
                 Get Verified
             </Button>
+        </section>
+        <section className='mt-7 space-y-5'>
+            <h1 className='font-bold text-al py-1'>What's happening?</h1>
+            <div>
+                <p className='text-sm'>
+                    UFC - Live
+                </p>
+                <p className='font-bold'>
+                    Tyson Fury vs Aleksander Usyk
+                </p>
+                {[1,1,1,1].map((item)=><div className='flex justify-between w-full mt-5'>
+                    <div>
+                        <p>Entertainment - Trending</p>
+                        <p className='font-bold'>#Deadpool</p>
+                        <p>34.3k Tweets</p>
+                    </div>
+                    <MoreHorizIcon/>
+                </div>)}
+            </div>
         </section>
     </div>
   )
