@@ -3,6 +3,8 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { useNavigate } from 'react-router-dom';
 import news from '../../images/news.png';
 import { Avatar, Button } from '@mui/material';
+import verified from '../../images/verified.png';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 
 const Profile = () => {
     const navigate = useNavigate();
@@ -37,13 +39,27 @@ const Profile = () => {
                         sx={{ width: "10rem", height: "10rem", border: "4px solid white" }}
                     />
 
-                    {false ? <Button
+                    {true ? <Button
                         onClick={handleOpenProfileModel}
                         variant='contained' sx={{ borderRadius: "20px" }}>Edit profile</Button> : <Button
                             onClick={handleFollowUser}
-                            variant='contained' sx={{ borderRadius: "20px" }}>{true?"Follow":"Unfollow"}</Button>}
+                            variant='contained' sx={{ borderRadius: "20px" }}>{true? "Follow":"Unfollow"}</Button>}
+                </div>
 
-
+                <div>
+                    <div className='flex items-center'>
+                        <h1 className='font-bold text-lg'>Jaiwin Prince</h1>
+                        {true && <img className='ml-2 w-5 h-5' src={verified} alt="" />}
+                    </div>
+                </div>
+                <h1 className='text-gray-500'>@Jaiwin21</h1>
+                <div className='mt-2 space-y-3'>
+                        <p>Hello, I am Jaiwin - an aspiring software engineer. Feel free to see some of my other projects on my website.</p>
+                        <div className='py-1 flex space-x-5'>
+                            <div className='flex items-center text-gray-500'>
+                                <BusinessCenterIcon/>
+                            </div>
+                        </div>
                 </div>
             </section>
         </div>
