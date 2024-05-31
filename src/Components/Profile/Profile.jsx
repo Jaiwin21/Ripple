@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { useNavigate } from 'react-router-dom';
 import news from '../../images/news.png';
-import { Avatar, Button } from '@mui/material';
+import { Avatar, Button, Box, Tab, Tabs } from '@mui/material';
 import verified from '../../images/verified.png';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { TabContext, TabList, TabPanel } from "@mui/lab"
+
 
 const Profile = () => {
+    const [tabValue, setTabValue]=useState("1")
     const navigate = useNavigate();
     const handleBack = () => navigate(-1);
     const handleOpenProfileModel = () => {
@@ -15,6 +20,17 @@ const Profile = () => {
 
     const handleFollowUser = () => {
         console.log("follow user")
+    }
+
+    const handleTabChange=(event, newValue)=>{
+        setTabValue(newValue)
+
+        if(newValue===4){
+            console.log("liked posts")
+        } else if(newValue==1){
+            console.log("users posts")
+        }
+
     }
 
     return (
@@ -43,7 +59,7 @@ const Profile = () => {
                         onClick={handleOpenProfileModel}
                         variant='contained' sx={{ borderRadius: "20px" }}>Edit profile</Button> : <Button
                             onClick={handleFollowUser}
-                            variant='contained' sx={{ borderRadius: "20px" }}>{true? "Follow":"Unfollow"}</Button>}
+                            variant='contained' sx={{ borderRadius: "20px" }}>{true ? "Follow" : "Unfollow"}</Button>}
                 </div>
 
                 <div>
@@ -54,13 +70,51 @@ const Profile = () => {
                 </div>
                 <h1 className='text-gray-500'>@Jaiwin21</h1>
                 <div className='mt-2 space-y-3'>
-                        <p>Hello, I am Jaiwin - an aspiring software engineer. Feel free to see some of my other projects on my website.</p>
-                        <div className='py-1 flex space-x-5'>
-                            <div className='flex items-center text-gray-500'>
-                                <BusinessCenterIcon/>
-                            </div>
+                    <p>Hello, I am Jaiwin - an aspiring software engineer. Feel free to see some of my other projects on my website.</p>
+                    <div className='py-1 flex space-x-5'>
+                        <div className='flex items-center text-gray-500'>
+                            <BusinessCenterIcon />
+                            <p className='ml-2'>Education</p>
                         </div>
+                        <div className='flex items-center text-gray-500'>
+                            <LocationOnIcon />
+                            <p className='ml-2'>Milton Keynes, UK</p>
+                        </div>
+                        <div className='flex items-center text-gray-500'>
+                            <CalendarMonthIcon />
+                            <p className='ml-2'>Joined Apr 2023</p>
+                        </div>
+                    </div>
+                    <div className='flex items-center space-x-5'>
+                        <div className='flex items-center space-x-1 font-semibold'>
+                            <span>380</span>
+                            <span className='text-gray-500'>Following</span>
+                        </div>
+                        <div className='flex items-center space-x-1 font-semibold'>
+                            <span>1M</span>
+                            <span className='text-gray-500'>Followers</span>
+                        </div>
+
+                    </div>
                 </div>
+            </section>
+
+            <section>
+                <Box sx={{ width: '100%', typography: 'body1' }}>
+                    <TabContext value={tabValue}>
+                        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                            <TabList onChange={handleTabChange} aria-label="lab API tabs example">
+                                <Tab label="Ripples" value="1" />
+                                <Tab label="Replies" value="2" />
+                                <Tab label="Media" value="3" />
+                                <Tab label="Likes" value="4" />
+                            </TabList>
+                        </Box>
+                        <TabPanel value="1">Item One</TabPanel>
+                        <TabPanel value="2">Item Two</TabPanel>
+                        <TabPanel value="3">Item Three</TabPanel>
+                    </TabContext>
+                </Box>
             </section>
         </div>
     )
