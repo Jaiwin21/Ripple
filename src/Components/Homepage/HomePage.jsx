@@ -16,7 +16,7 @@ const HomePage = () => {
       </Grid>
 
       {/* Main content in the center */}
-      <Grid item xs={12} lg={5} xl={4} className='w-full relative'>
+      <Grid item xs={12} lg={6} xl={4} className='px-5 lg:px-9 w-full relative'>
         <HomeSection />
         <section>
           {[1, 1, 1, 1].map((item, index) => (
