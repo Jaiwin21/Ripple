@@ -90,7 +90,7 @@ const PostCard = () => {
                     </div>
 
                     <div className='mt-2'>
-                        <div className='cursor-pointer'>
+                        <div  onClick={()=>navigate(`/post/${3}`)} className='cursor-pointer'>
                             <p className='mb-2 p-0'>Full stack project</p>
                             <img className='w-[28rem] border border-gray-400 p-5 rounded-md' src={post} alt="" />
 

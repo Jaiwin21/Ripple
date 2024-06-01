@@ -8,6 +8,7 @@ import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { TabContext, TabList, TabPanel } from "@mui/lab"
+import PostCard from '../HomeSection/PostCard';
 
 
 const Profile = () => {
@@ -99,7 +100,7 @@ const Profile = () => {
                 </div>
             </section>
 
-            <section>
+            <section className='py-5'>
                 <Box sx={{ width: '100%', typography: 'body1' }}>
                     <TabContext value={tabValue}>
                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -110,9 +111,12 @@ const Profile = () => {
                                 <Tab label="Likes" value="4" />
                             </TabList>
                         </Box>
-                        <TabPanel value="1">Item One</TabPanel>
-                        <TabPanel value="2">Item Two</TabPanel>
-                        <TabPanel value="3">Item Three</TabPanel>
+                        <TabPanel value="1">
+                            {[1,1,1,1].map((item)=><PostCard/>)}
+                        </TabPanel>
+                        <TabPanel value="2">User replies</TabPanel>
+                        <TabPanel value="3">Media</TabPanel>
+                        <TabPanel value="4">Likes</TabPanel>
                     </TabContext>
                 </Box>
             </section>
