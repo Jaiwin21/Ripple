@@ -5,6 +5,7 @@ import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from '@mui/material';
 import { useFormik } from 'formik';
+import { TextField } from '@mui/material'; 
 
 const style = {
   position: 'absolute',
@@ -32,19 +33,23 @@ export default function ProfileModal() {
 }
 
 const formik=useFormik({
-    intialValues:{
-        fullname:"",
-        website:"",
-        location:"",
-        bio:"",
-        backgroundImage:"",
-        image:""
+    initialValues:{
+        fullName: "",
+        website: "",
+        location: "",
+        bio: "",
+        backgroundImage: "",
+        image: "",
     },
-    onSubmit:handleSubmit
+    onSubmit:handleSubmit,
 })
 
-const handleImageChange=()=>{
-
+const handleImageChange=(event)=>{
+    setUploading(true);
+    const {name}=event.target
+    const file=event.target.files[0];
+    formik.setFieldValue(name, file);
+    setUploading(false);
 }
 
   return (
@@ -84,6 +89,30 @@ const handleImageChange=()=>{
                                 name="backgroundImage" />
                             </div>
                         </div>
+                    </div>
+                    <div className='space-y-3'>
+                        <TextField
+                        fullWidth
+                        id="fullName"
+                        name="fullName"
+                        label="Fullname"
+                        value={formik.values.fullName}
+                        onChange={formik.handleChange}
+                        error={formik.touched.name && Boolean(formik.errors.fullName)}
+                        helperText={formik.touched.name && formik.errors.fullName}
+                        />
+                        <TextField
+                        fullWidth
+                        multiline
+                        rows={4}
+                        id="bio"
+                        name="fullName"
+                        label="Biography"
+                        value={formik.values.fullName}
+                        onChange={formik.handleChange}
+                        error={formik.touched.name && Boolean(formik.errors.fullName)}
+                        helperText={formik.touched.name && formik.errors.fullName}
+                        />
                     </div>
                 </div>
             </form>
