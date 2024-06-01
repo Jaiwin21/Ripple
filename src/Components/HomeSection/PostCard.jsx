@@ -42,7 +42,7 @@ const PostCard = () => {
         console.log("Handle like post");
     }
     return (
-        <div className=''>
+        <React.Fragment>
             {/* <div className='flex items-center font-semibold text-gray-700 py-2'>
             <RepeatIcon/>
             <p>You repost</p>
@@ -133,7 +133,10 @@ const PostCard = () => {
                 </div>
 
             </div>
-        </div>
+            <section>
+                <ReplyModal/>
+            </section>
+        </React.Fragment>
     )
 }
 
