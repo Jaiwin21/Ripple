@@ -36,7 +36,7 @@ const Profile = () => {
 
     return (
         <div>
-            <section className={`z-50 flex-center sticky top-0 bg-opacity-95`}>
+            <section className={`bg-white z-50 flex-center sticky top-0 bg-opacity-95`}>
 
                 <KeyboardBackspaceIcon className='cursor-pointer' onClick={handleBack} />
                 <h1 className='py-5 text-al font-bold opacity-90 ml-5'>@Jaiwin21</h1>

@@ -22,7 +22,7 @@ const HomePage = () => {
       <Grid item xs={12} lg={6} xl={4} className='px-5 lg:px-9 w-full relative'>
         
         <Routes>
-          {/* <Route path="/" element={<HomeSection />}></Route> */}
+          <Route path="/" element={<HomeSection />}></Route>
           <Route path="/home" element={<HomeSection />}></Route>
           <Route path="/profile/:id" element={<Profile />}></Route>
           <Route path="/post/:id" element={<PostDetails />}></Route>
