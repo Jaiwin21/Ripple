@@ -7,6 +7,7 @@ import { IconButton } from '@mui/material';
 import { useFormik } from 'formik';
 import { TextField } from '@mui/material';
 import { Avatar} from '@mui/material'; 
+import './ProfileModal.css';
 
 const style = {
   position: 'absolute',
@@ -29,8 +30,8 @@ export default function ProfileModal() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const handleSubmit=()=>{
-    console.log("handle submit");
+  const handleSubmit=(values)=>{
+    console.log("handle submit", values);
 }
 
 const formik=useFormik({
@@ -75,7 +76,7 @@ const handleImageChange=(event)=>{
                     </div>
                     <Button type='submit'>Save</Button>
                 </div>
-                <div className='overflow-y-scroll overflow-x-hidden h-[80vh]'>
+                <div className='hideScrollBar overflow-y-scroll overflow-x-hidden h-[80vh]'>
                     <React.Fragment>
                         <div className='w-full'>
                             <div className='relative'>
@@ -98,6 +99,8 @@ const handleImageChange=(event)=>{
 
                                 <input 
                                 className='absolute top-0 left-0 w-[10rem] h-full opacity-0 cursor-pointer'
+                                onChange={handleImageChange}
+                                name="image"
                                 type="file"
                                  />
                             </div>
@@ -120,7 +123,7 @@ const handleImageChange=(event)=>{
                         multiline
                         rows={4}
                         id="bio"
-                        name="fullName"
+                        name="bio"
                         label="Biography"
                         value={formik.values.bio}
                         onChange={formik.handleChange}
@@ -140,7 +143,7 @@ const handleImageChange=(event)=>{
                         <TextField
                         fullWidth
                         id="location"
-                        name="locatione"
+                        name="location"
                         label="Location"
                         value={formik.values.location}
                         onChange={formik.handleChange}
