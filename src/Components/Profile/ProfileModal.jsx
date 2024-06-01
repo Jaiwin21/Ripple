@@ -98,8 +98,8 @@ const handleImageChange=(event)=>{
                         label="Fullname"
                         value={formik.values.fullName}
                         onChange={formik.handleChange}
-                        error={formik.touched.name && Boolean(formik.errors.fullName)}
-                        helperText={formik.touched.name && formik.errors.fullName}
+                        error={formik.touched.fullName && Boolean(formik.errors.fullName)}
+                        helperText={formik.touched.fullName && formik.errors.fullName}
                         />
                         <TextField
                         fullWidth
@@ -108,10 +108,10 @@ const handleImageChange=(event)=>{
                         id="bio"
                         name="fullName"
                         label="Biography"
-                        value={formik.values.fullName}
+                        value={formik.values.bio}
                         onChange={formik.handleChange}
-                        error={formik.touched.name && Boolean(formik.errors.fullName)}
-                        helperText={formik.touched.name && formik.errors.fullName}
+                        error={formik.touched.bio && Boolean(formik.errors.bio)}
+                        helperText={formik.touched.bio && formik.errors.bio}
                         />
                     </div>
                 </div>
