@@ -17,11 +17,13 @@ const style = {
   boxShadow: 24,
   p: 4,
   outline:"none",
+  borderRadius:4
 };
 
 
 export default function ProfileModal() {
   const [open, setOpen] = React.useState(false);
+  const [uploading, setUploading]=React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -41,6 +43,9 @@ const formik=useFormik({
     onSubmit:handleSubmit
 })
 
+const handleImageChange=()=>{
+
+}
 
   return (
     <div>
@@ -58,11 +63,28 @@ const formik=useFormik({
 
                         <IconButton onClick={handleClose} aria-label="Delete">
                             <CloseIcon/>
-                            <p className='text-sm'>Edit profile</p>
+                            
                         </IconButton>
-
+                        <p className=''>Edit profile</p>
                     </div>
+                    <Button type='submit'>Save</Button>
+                </div>
+                <div className='overflow-y-scroll overflow-x-hidden h-[80vh]'>
+                    <div>
+                        <div className='w-full'>
+                            <div className='relative'>
+                                <img 
+                                className='w-full h-[12rem] object-cover object-center'
+                                src="https://cdn.pixabay.com/photo/2018/07/10/15/09/star-3528884_640.jpg" alt="" />
 
+                                <input 
+                                type="file"
+                                className='absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer'
+                                onChange={handleImageChange}
+                                name="backgroundImage" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </form>
         </Box>
