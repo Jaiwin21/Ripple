@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import RepeatIcon from '@mui/icons-material/Repeat';
 import { Avatar } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -13,11 +13,16 @@ import FileUploadIcon from '@mui/icons-material/FileUpload';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { FavoriteOutlined } from '@mui/icons-material';
+import ReplyModal from './ReplyModal.jsx';
 
 const PostCard = () => {
     const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+    const [openReplyModal, setOpenReplyModal]=useState(false);
+    const handleOpenReplyModel = () => setOpenReplyModal(true);
+    const handleCloseReplyModal = () => setOpenReplyModal(false);
+    
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -30,9 +35,6 @@ const PostCard = () => {
         handleClose();
     }
 
-    const handleOpenReplyModel=()=>{
-        console.log("Open model");
-    }
 
     const handleCreatePost=()=>{
         console.log("Handle create ripple")
@@ -134,7 +136,7 @@ const PostCard = () => {
 
             </div>
             <section>
-                <ReplyModal/>
+                <ReplyModal open={openReplyModal} handleClose={handleCloseReplyModal}/>
             </section>
         </React.Fragment>
     )
