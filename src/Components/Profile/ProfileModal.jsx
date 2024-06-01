@@ -24,11 +24,10 @@ const style = {
 };
 
 
-export default function ProfileModal() {
-  const [open, setOpen] = React.useState(false);
+export default function ProfileModal({open, handleClose}) {
+//   const [open, setOpen] = React.useState(false);
   const [uploading, setUploading]=React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  
 
   const handleSubmit=(values)=>{
     console.log("handle submit", values);
@@ -56,9 +55,9 @@ const handleImageChange=(event)=>{
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      
       <Modal
-        open={true}
+        open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
