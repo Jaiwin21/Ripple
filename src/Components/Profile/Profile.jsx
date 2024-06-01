@@ -9,6 +9,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { TabContext, TabList, TabPanel } from "@mui/lab"
 import PostCard from '../HomeSection/PostCard';
+import ProfileModal from './ProfileModal';
 
 
 const Profile = () => {
@@ -119,6 +120,9 @@ const Profile = () => {
                         <TabPanel value="4">Likes</TabPanel>
                     </TabContext>
                 </Box>
+            </section>
+            <section>
+                <ProfileModal/>
             </section>
         </div>
     )
