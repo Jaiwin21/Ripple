@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import { IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 const style = {
     position: 'absolute',
@@ -18,6 +19,13 @@ const style = {
     p: 4,
     borderRadius: 4,
 };
+
+const features=["Prioritized rankings in conversations and search.",
+    "Double the number of Ripples between ads in your 'For You' and 'Following timelines.'",
+    "Add bold and italic text in your Ripples.",
+    "Post more larger size videos and access to higher resolutions",
+    "Access to BETA features."
+]
 
 export default function SubscriptionModal() {
     const [open, setOpen] = React.useState(false);
@@ -51,14 +59,23 @@ export default function SubscriptionModal() {
 
                             </div>
 
-                            <div className='flex justify-between border rounded-full px-5 py-3'>
+                            <div className='flex justify-between border rounded-full px-5 py-3 border border-gray-500'>
                                 <div>
-                                    <span>Anually</span>
-                                    <span>SAVE 18%</span>
+                                    <span onClick={()=>setPlan("Anually")} className={`${plan==="Anually"?"text-black":"text-gray-400"} cursor-pointer`}>Anually</span>
+                                    <span className='text-green-500 text-sm ml-5'>SAVE 18%</span>
                                 </div>
-                                <p className={`${plan==="monthly"}`}>
+                                <p onClick={()=>setPlan("Monthly")} className={`${plan==="monthly"?"text-black":"text-gray-400"} cursor-pointer`}>
                                     Monthly
                                 </p>
+
+                            </div>
+
+                            <div className='space-y-3'>
+                                {features.map((item)=> <div className='flex items-center space-x-5'>
+                                    <FiberManualRecordIcon sx={{width:"7px", height:"7px"}}/>
+                                    <p className='text-xs'>{item}</p>
+
+                                </div>)}
 
                             </div>
 
