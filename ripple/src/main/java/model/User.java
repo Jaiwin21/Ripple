@@ -75,7 +75,7 @@ public class User {
         return fullName;
     }
 
-    public void setFulName(String fulName) {
+    public void setFullName(String fulName) {
         this.fullName = fulName;
     }
 
@@ -85,5 +85,13 @@ public class User {
 
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public void setVerification(Verification verification) {
+        this.verification = verification;
+    }
+
+    public Verification getVerification() {
+        return verification;
     }
 }

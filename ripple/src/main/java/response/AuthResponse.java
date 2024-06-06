@@ -14,4 +14,7 @@ public class AuthResponse {
     private String jwt;
     private Boolean status;
 
+    public AuthResponse(String token, boolean status) {
+
+    }
 }
