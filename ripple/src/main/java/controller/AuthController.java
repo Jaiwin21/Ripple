@@ -63,6 +63,7 @@ public class AuthController {
         return new ResponseEntity<AuthResponse>(res, HttpStatus.CREATED);
     }
 
+    @PostMapping("/signin")
     public ResponseEntity<AuthResponse>signin(@RequestBody User user){
         String username = user.getEmail();
         String password = user.getPassword();
