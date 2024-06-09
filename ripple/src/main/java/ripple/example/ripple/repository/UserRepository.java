@@ -1,6 +1,6 @@
-package repository;
+package ripple.example.ripple.repository;
 
-import model.User;
+import ripple.example.ripple.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

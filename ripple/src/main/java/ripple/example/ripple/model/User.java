@@ -1,4 +1,4 @@
-package model;
+package ripple.example.ripple.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

@@ -1,4 +1,4 @@
-package config;
+package ripple.example.ripple.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
