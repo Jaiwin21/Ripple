@@ -1,4 +1,4 @@
-package ripple.example.ripple.exception;
+package exception;
 
 public class UserException extends Exception {
 

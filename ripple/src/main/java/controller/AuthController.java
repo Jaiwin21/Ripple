@@ -1,9 +1,9 @@
-package ripple.example.ripple.controller;
+package controller;
 
-import ripple.example.ripple.config.JwtProvider;
-import ripple.example.ripple.exception.UserException;
-import ripple.example.ripple.model.User;
-import ripple.example.ripple.model.Verification;
+import config.JwtProvider;
+import exception.UserException;
+import model.User;
+import model.Verification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +14,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import ripple.example.ripple.repository.UserRepository;
-import ripple.example.ripple.response.AuthResponse;
-import ripple.example.ripple.service.CustomUserDetailsServiceImplementation;
+import repository.UserRepository;
+import response.AuthResponse;
+import service.CustomUserDetailsServiceImplementation;
 
 @RestController
 @RequestMapping("/auth")

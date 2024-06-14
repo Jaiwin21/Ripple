@@ -1,4 +1,4 @@
-package ripple.example.ripple.config;
+package config;
 
 public class JwtConstant {
 

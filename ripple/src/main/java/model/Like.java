@@ -1,4 +1,4 @@
-package ripple.example.ripple.model;
+package model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -14,6 +14,6 @@ public class Like {
     @ManyToOne
     private User user;
 
-    @ManyToOne
-    private Post post;
+//    @ManyToOne
+//    private Post post;
 }

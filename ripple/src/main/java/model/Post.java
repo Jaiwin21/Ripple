@@ -1,4 +1,4 @@
-package ripple.example.ripple.model;
+package model;
 
 import jakarta.persistence.*;
 import lombok.Data;

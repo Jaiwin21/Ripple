@@ -1,4 +1,4 @@
-package ripple.example.ripple.response;
+package response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
